@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Головна</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script type="text/javascript" src="/eel.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+
+    <h2>Оновлення/додавання посилань</h2>
+    <form id="lessonsData">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name-lecture">Назва пари</label>
+          <input type="text" id="name-lecture" name="name-lecture">
+        </div>
+      </div>
+      <hr>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="lecture-meet-link">Посилання на лекцію meet</label>
+          <input type="text" id="lecture-meet-link" name="lecture-meet-link">
+        </div>
+        <div class="form-group">
+          <label for="lecture-visit-link">Посилання на відвідування лекції</label>
+          <input type="text" id="lecture-visit-link" name="lecture-visit-link">
+        </div>
+      </div>
+      <span class="note">*за замовчуванням, ці посилання одразу записуються й на інші типи занять цієї пари</span>
+      <hr>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="practice-meet-link">Посилання на практичну meet</label>
+          <input type="text" id="practice-meet-link" name="practice-meet-link">
+        </div>
+        <div class="form-group">
+          <label for="lecture-visit-link">Посилання на відвідування практичної</label>
+          <input type="text" id="practice-visit-link" name="practice-visit-link">
+        </div>
+      </div>
+      <hr>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="laboratory-meet-link">Посилання на лабораторну meet</label>
+          <input type="text" id="laboratory-meet-link" name="laboratory-meet-link">
+        </div>
+        <div class="form-group">
+          <label for="laboratory-visit-link">Посилання на відвідування лабораторної</label>
+          <input type="text" id="laboratory-visit-link" name="laboratory-visit-link">
+        </div>
+      </div>
+      <br><br>
+      <button type="submit">Надіслати</button>
+    </form>
+
+    <br>
+    <br>
+    <h2>Налаштування користувача</h2>
+    <form id="settings-user">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="login_google">Логін гугла</label>
+          <input type="text" id="login_google" name="login_google">
+        </div>
+        <div class="form-group">
+          <label for="password_google">Пароль гугла</label>
+          <input type="password" id="password_google" name="password_google">
+        </div>
+      </div>
+      <hr>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="login_dl">Логін DL</label>
+          <input type="text" id="login_dl" name="login_dl">
+        </div>
+        <div class="form-group">
+          <label for="password_dl">Пароль DL</label>
+          <input type="password" id="password_dl" name="password_dl">
+        </div>
+      </div>
+      <hr>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="group">Доступні групи</label>
+          <select name="group" id="group"></select>
+        </div>
+      </div>
+      <br>
+      <br>
+      <button type="submit">Надіслати/оновити</button>
+    </form>
+    <br>
+    <br>
+    <div class="current-settings">
+      <div class="current-settings__item">DL login: <span class="current-settings__dl-login"></span></div>
+      <div class="current-settings__item">DL password: <span class="current-settings__dl-password"></span></div>
+      <div class="current-settings__item">Google login: <span class="current-settings__google-login"></span></div>
+      <div class="current-settings__item">Google password: <span class="current-settings__google-password"></span></div>
+    </div>
+    <span class="message">
+      *Усі паролі та логіни зберігаються ВИКЛЮЧНО на вашому пристрої та НЕ передаються третім особам. <br>
+      УВАГА. Якщо Ви самі передали застоунок третій особі, то тоді розробник НЕ несе відповідальность за збереження
+      вашої чутливої інформації. детальніше <a href="warning.html" target="_blank" rel="noopener noreferrer">тут</a>
+    </span>
+    <br>
+    <br>
+    <h2>Посилання які вже додані</h2>
+
+    <div class="exist">
+      <div class="exist-item">
+        <span class="exist-item__name">назва пари</span>
+        <div class="exist-item__btns">
+          <button class="exist-item__edit">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3">
+              <path
+                d="M186.67-186.67H235L680-631l-48.33-48.33-445 444.33v48.33ZM120-120v-142l559.33-558.33q9.34-9 21.5-14 12.17-5 25.5-5 12.67 0 25 5 12.34 5 22 14.33L821-772q10 9.67 14.5 22t4.5 24.67q0 12.66-4.83 25.16-4.84 12.5-14.17 21.84L262-120H120Zm652.67-606-46-46 46 46Zm-117 71-24-24.33L680-631l-24.33-24Z" />
+            </svg>
+          </button>
+          <button class="exist-item__delete">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3">
+              <path
+                d="M267.33-120q-27.5 0-47.08-19.58-19.58-19.59-19.58-47.09V-740H160v-66.67h192V-840h256v33.33h192V-740h-40.67v553.33q0 27-19.83 46.84Q719.67-120 692.67-120H267.33Zm425.34-620H267.33v553.33h425.34V-740Zm-328 469.33h66.66v-386h-66.66v386Zm164 0h66.66v-386h-66.66v386ZM267.33-740v553.33V-740Z" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="start-script">запустити скрипт</button>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

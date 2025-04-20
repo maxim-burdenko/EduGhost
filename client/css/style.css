@@ -1,0 +1,410 @@
+/* Hacker Theme CSS for Ukrainian Website - Compact Version with Fixed Links Display */
+:root {
+  --main-bg: #0a0e14;
+  --secondary-bg: #1a1e24;
+  --accent-color: #00ff00;
+  --accent-color-dim: #00cc00;
+  --text-color: #e3e3e3;
+  --danger-color: #ff3333;
+  --border-color: #2a2e34;
+  --input-bg: #131720;
+  --hover-color: #00ff8c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  padding: 20px;
+  background-image: 
+    linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  line-height: 1.4;
+}
+
+.container{
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: var(--accent-color);
+  margin: 15px 0 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 3px;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+form {
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+/* Two-column form layout for wider screens */
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 0; /* Ensures proper flexbox behavior */
+}
+
+label {
+  display: block;
+  margin: 5px 0 3px 0;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+input, select {
+  width: 100%;
+  padding: 6px 8px;
+  margin-bottom: 5px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+input:focus-visible, select:focus-visible {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+button {
+  background-color: var(--secondary-bg);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover,
+button:focus-visible {
+  background-color: var(--accent-color);
+  color: var(--main-bg);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed var(--border-color);
+  margin: 10px 0;
+}
+
+span {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.note {
+  display: block;
+  font-size: 12px;
+  margin: 0 0 5px 0;
+}
+
+.message {
+  display: block;
+  font-size: 12px;
+  margin: 8px 0;
+  padding: 8px;
+  border-left: 3px solid var(--accent-color-dim);
+  background-color: rgba(0, 255, 0, 0.05);
+}
+
+.message a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.message a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+.current-settings {
+  background-color: var(--secondary-bg);
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.current-settings__item {
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+}
+
+.current-settings__item span {
+  color: var(--accent-color);
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* Fixed styling for existing links container */
+.exist {
+  margin: 15px 0;
+  max-height: 400px; /* Set a max height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.exist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left: 3px solid var(--accent-color);
+  margin-bottom: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exist-item:hover {
+  transform: translateX(2px);
+  box-shadow: -2px 0 5px rgba(0, 255, 0, 0.2);
+}
+
+.exist-item__name {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 65%;
+}
+
+.exist-item__btns {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.exist-item__edit, .exist-item__delete {
+  background: none;
+  border: none;
+  padding: 3px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.exist-item__edit svg, .exist-item__delete svg {
+  width: 24px;
+  height: 24px;
+  transition: fill 0.3s ease;
+}
+
+.exist-item__edit:hover svg,
+.exist-item__edit:focus-visible svg {
+  fill: var(--main-bg);
+}
+
+.exist-item__delete:hover svg,
+.exist-item__delete:focus-visible svg {
+  fill: var(--danger-color);
+}
+
+.start-script {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: block;
+  padding: 12px;
+  margin: 15px 0;
+  font-size: 16px;
+  background-color: var(--secondary-bg);
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.start-script:hover,
+.start-script:focus-visible {
+  background-color: var(--accent-color);
+  color: var(--main-bg);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+/* Terminal loading animation */
+@keyframes cursor-blink {
+  0%, 40% { opacity: 1; }
+  60%, 100% { opacity: 0; }
+}
+
+.start-script:after {
+  content: "_";
+  display: inline-block;
+  animation: cursor-blink 1.2s infinite;
+  margin-left: 5px;
+}
+
+/* Add a glitch effect on hover for headings */
+@keyframes glitch {
+  0% { transform: translate(2px, 0); }
+  20% { transform: translate(-2px, 0); }
+  40% { transform: translate(2px, 0); }
+  60% { transform: translate(-2px, 0); }
+  80% { transform: translate(2px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+h2:hover {
+  animation: glitch 0.3s ease forwards;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 12px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .current-settings {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 570px) {
+  body {
+    padding: 8px;
+  }
+  
+  form {
+    padding: 10px;
+  }
+  
+  h2 {
+    font-size: 16px;
+  }
+  
+  .exist-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .exist-item__name {
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+  
+  .exist-item__btns {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .current-settings__item {
+    flex-direction: column;
+  }
+}
+
+/* Adding custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--main-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color-dim);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Add focus-visible styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Add additional font for better Cyrillic support */
+@font-face {
+  font-family: 'Hack';
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/fonts/hack-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2300ff00' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  padding-right: 30px;
+}
+
+/* Adding animation when new items are added */
+@keyframes highlight {
+  0% { background-color: rgba(0, 255, 0, 0.3); }
+  100% { background-color: rgba(0, 0, 0, 0.2); }
+}
+
+.exist-item--new {
+  animation: highlight 2s ease forwards;
+}
+
+/* Tooltip for truncated names */
+.exist-item__name {
+  position: relative;
+}
+
+.exist-item__name:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  padding: 5px;
+  border: 1px solid var(--accent-color);
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: normal;
+  max-width: 250px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
